@@ -1,8 +1,12 @@
 var twoSum = function (nums, target) {
-  let test = 0;
-  let output = []
-  nums.filter((item,index)=> item%2===0)
+  for (let outer = 0; outer < nums.length; outer++) {
+    for (let inner = outer + 1; inner <= nums.length; inner++) {
+      if (nums[outer] + nums[inner] === target) {
+        return [outer, inner];
+      }
+    }
+  }
 };
 
-
-console.log(twoSum([2, 7, 11, 15], 9));
+const result = twoSum([2, 7, 11, 15], 9);
+console.log(result);
